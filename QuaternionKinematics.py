@@ -54,7 +54,7 @@ def quaternionRates(quat, omega_body):
     q1 = quat[1]
     q2 = quat[2]
     q3 = quat[3]
-    w = np.array([[-q1,-q2,-q3],[q0,q3,-q2],[-q3,q0,q1],[q2,-q1,q0]])
+    w = np.array([[-q1,-q2,-q3],[q0,-q3, q2],[q3,q0,-q1],[-q2, q1, q0]])
     return 0.5*np.matmul(w,omega_body)
 attitude = degToRad([0,0,0])
 omega_body = degToRad([-1,15,-2])
